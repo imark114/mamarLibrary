@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-e(edaxg6(+q=%8mbfg3vuj+u_-(4twsb1dcb5_!5qavy#4_po-
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-
+CSRF_TRUSTED_ORIGINS = ['https://mamarlibrary.onrender.com','https://*.127.0.0.1']
 
 # Application definition
 
