@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+{% block css %} <link rel="stylesheet" href=" {% static "css/style.css" %} "> {% endblock css %}
+{% block content %}
+   <div class="row">
+    <div class="col-md-2 category">
+        <h2>Search by Category</h2>
+        {% for cat in categories %}
+         <div>
+            <a href=" {% url "book_category" cat.slug %} ">{{cat.name}}</a>
+         </div>
+        {% endfor %}
+    </div>
+    <div class="col-md-8 book_sections">
+        <div class="row">
+            {% for book in books %}
+            <div class="col-md-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="{{book.image.url}}" class="card-img-top" alt="Book">
+                    <div class="card-body">
+                      <h5 class="card-title">{{book.title}}</h5>
+                      <p class="card-text">{{book.descriptions | truncatewords:15}}</p>
+                      <a href=" {% url "book_details" book.id %} " class="btn btn-primary">View Details</a>
+                    </div>
+                  </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+   </div>
+{% endblock content %}

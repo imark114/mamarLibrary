@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<a class="btn btn-warning m-5" href=" {% url "edit_profile" %} ">Edit Profile</a>
+<h2 class="p-5">You bought these books:</h2>
+<div class="mt-5 row px-5" style="witdh:60%; margin:auto;">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Transaction ID</th>
+        <th scope="col">Book Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Borrow Time</th>
+        <th scope="col">Balance After Borrow</th>
+        <th scope="col">Return Book</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for book in books %}
+      <tr>
+        <th scope="row">{{book.id}}</th>
+        <td>{{book.book.title}}</td>
+        <td>{{book.book.price}}</td>
+        <td>{{book.timestmp}}</td>
+        <td>{{book.balance_after_buy}}</td>
+        <td><a class='btn btn-danger' href=" {% url "return_book" book.id %} ">Return</a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock content %}

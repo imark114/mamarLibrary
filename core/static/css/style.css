@@ -1,0 +1,34 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.category{
+    background-color: white;
+    margin-top: 50px !important;
+    padding: 23px 38px !important;
+}
+.category a{
+    text-decoration: none;
+    background: #607D8B;
+    color: white;
+    font-size: 17px;
+    padding: 7px 10px;
+    display: inline-block;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+.book_sections{
+    margin-top: 50px !important;
+    margin-left: 20px;
+}
+
+.description_section{
+    padding: 20px 10px;
+}
+.book_img{
+    background: white;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 5px;
+}
